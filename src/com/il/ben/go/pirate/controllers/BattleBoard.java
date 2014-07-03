@@ -2,10 +2,10 @@ package com.il.ben.go.pirate.controllers;
 
 import org.newdawn.slick.Input;
 
-import com.il.ben.go.pirate.graphics.impl.Board;
 import com.il.ben.go.pirate.input.BattleBoardMouseDrag;
 import com.il.ben.go.pirate.graphics.IInterval;
 import com.il.ben.go.pirate.graphics.Layer;
+import com.il.ben.go.pirate.graphics.impl.battle.Board;
 
 public class BattleBoard extends Controller<Board> {
 
@@ -22,5 +22,8 @@ public class BattleBoard extends Controller<Board> {
 		((IInterval) super.getLayer()).updateInterval(x, y);
 	}
 
+	public void updateHover(int x, int y) {
+		super.getLayer().checkHover(x, y);
+	}
 
 }

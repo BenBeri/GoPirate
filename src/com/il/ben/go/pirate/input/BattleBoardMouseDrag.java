@@ -48,9 +48,8 @@ public class BattleBoardMouseDrag implements MouseListener {
 	}
 
 	@Override
-	public void mouseMoved(int arg0, int arg1, int arg2, int arg3) {
-		// TODO Auto-generated method stub
-		
+	public void mouseMoved(int oldX, int oldY, int newX, int newY) {
+		((BattleBoard) this.c).updateHover(newX, newY);
 	}
 
 	@Override

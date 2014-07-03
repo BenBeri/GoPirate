@@ -5,8 +5,8 @@ import java.util.Map;
 
 import org.newdawn.slick.Graphics;
 
-import com.il.ben.go.pirate.graphics.impl.Board;
 import com.il.ben.go.pirate.graphics.impl.Ocean;
+import com.il.ben.go.pirate.graphics.impl.battle.Board;
 
 public class GraphicContainer {
 
