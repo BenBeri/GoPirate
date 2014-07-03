@@ -25,7 +25,7 @@ public class Board implements Layer, IInterval {
 	
 		for (int i = 0; i < this.tiles[0].length; i++) {
 			for (int j = 0; j < this.tiles[1].length; j++) {
-				this.tiles[i][j] = new Tile(Tiles.BATTLE_BLOCK);
+				this.tiles[i][j] = new Tile(i, j, Tiles.BATTLE_BLOCK);
 			}
 		}
 	}
@@ -40,13 +40,7 @@ public class Board implements Layer, IInterval {
 				if (tile == null)
 					continue;
 				
-				int width = tile.getWidth();
-				int height = tile.getHeight();
-				
-				int x = (j * width / 2) - (i * width / 2);
-				int y = (j * height / 2) + (i * height / 2);
-				
-				tile.render(g, x, y);
+				tile.render(g);
 			}
 		}
 		

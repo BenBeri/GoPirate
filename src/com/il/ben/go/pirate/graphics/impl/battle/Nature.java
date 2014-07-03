@@ -12,7 +12,7 @@ public class Nature implements Layer {
 	private Tile[][] tiles = new Tile[15][10];
 	
 	public Nature() {
-		tiles[5][5] = new Tile(0, -(112), Tiles.ROCK);
+		tiles[1][0] = new Tile(1, 0, 0, 0, Tiles.ROCK);
 //		tiles[0][0] = new Tile(0, -22, Tiles.ROCK);
 //		tiles[0][1] = new Tile(0, -22, Tiles.ROCK);
 	}
@@ -26,13 +26,7 @@ public class Nature implements Layer {
 				if (tile == null)
 					continue;
 				
-				int width = tile.getWidth();
-				int height = tile.getHeight();
-				int x = (j * width / 2) - (i * width / 2);
-				int y = (j * height / 2) + (i * height / 2);
-				
-				System.out.println(y);
-				tile.render(g, x, y);
+				tile.render(g);
 			}			
 		}
 	}
