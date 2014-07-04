@@ -16,13 +16,16 @@ public class Board implements Layer, IInterval {
 	private Tile[][] tiles = new Tile[15][10];
 	private Image sprite;
 	private Nature nature;
+	private Entity entity;
+	
 	
 	
 	private Interval translate = new Interval();
 	
 	public Board() {
 		this.nature = new Nature();
-	
+		this.entity = new Entity();
+		
 		for (int i = 0; i < this.tiles[0].length; i++) {
 			for (int j = 0; j < this.tiles[1].length; j++) {
 				this.tiles[i][j] = new Tile(i, j, Tiles.BATTLE_BLOCK);
@@ -45,6 +48,7 @@ public class Board implements Layer, IInterval {
 		}
 		
 		// rendering rocks and so on..
+		this.entity.render(g);
 		this.nature.render(g);
 	}
 
@@ -54,9 +58,13 @@ public class Board implements Layer, IInterval {
 	
 	@Override
 	public void update() {
-		
+		this.entity.update();
 	}
 
+	public void updateShip() {
+		this.entity.updateShip();
+	}
+	
 	@Override
 	public void updateInterval(int x, int y) {
 		this.translate.update(x, y);

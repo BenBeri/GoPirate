@@ -1,5 +1,7 @@
 package com.il.ben.go.pirate.graphics.impl.battle;
 
+import java.util.Random;
+
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 
@@ -12,9 +14,16 @@ public class Nature implements Layer {
 	private Tile[][] tiles = new Tile[15][10];
 	
 	public Nature() {
-		tiles[1][0] = new Tile(1, 0, 0, 0, Tiles.ROCK);
-//		tiles[0][0] = new Tile(0, -22, Tiles.ROCK);
-//		tiles[0][1] = new Tile(0, -22, Tiles.ROCK);
+//		for (int i = 0; i < tiles.length; i++) {
+//			for (int j = 0; j < tiles[1].length; j++) {
+//				int chance = r.nextInt(100);
+//				if (chance > 80) {
+//					tiles[i][j] = new Tile(i, j, 0, 0, Tiles.ROCK);
+//				}
+//			}
+//		}
+	
+		
 	}
 	
 	@Override
@@ -36,6 +45,5 @@ public class Nature implements Layer {
 		// TODO Auto-generated method stub
 		
 	}
-
 
 }

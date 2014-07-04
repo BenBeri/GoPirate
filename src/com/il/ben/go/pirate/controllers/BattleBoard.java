@@ -3,6 +3,7 @@ package com.il.ben.go.pirate.controllers;
 import org.newdawn.slick.Input;
 
 import com.il.ben.go.pirate.input.BattleBoardMouseDrag;
+import com.il.ben.go.pirate.input.BattleMoveKey;
 import com.il.ben.go.pirate.graphics.IInterval;
 import com.il.ben.go.pirate.graphics.Layer;
 import com.il.ben.go.pirate.graphics.impl.battle.Board;
@@ -16,6 +17,7 @@ public class BattleBoard extends Controller<Board> {
 	@Override
 	public void init() {
 		super.addMouseListener(new BattleBoardMouseDrag(this));
+		super.addKeyListener(new BattleMoveKey(this));
 	}
 
 	public void updateScreenIntervals(int x, int y) {
@@ -26,4 +28,7 @@ public class BattleBoard extends Controller<Board> {
 		super.getLayer().checkHover(x, y);
 	}
 
+	public void updateShip() {
+		((Board) super.getLayer()).updateShip();
+	}
 }
